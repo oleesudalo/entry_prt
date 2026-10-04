@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!-- build: no-password-clean 2026-10-02 -->
 
@@ -52,7 +51,12 @@ button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}
 .distribution-box{margin-top:16px;padding:13px 14px;border-radius:12px;background:#fff8ee;border:1px solid #ffe0b8;color:#8a5412;font-size:13px;line-height:1.65;font-weight:700}
 body.popup-locked{overflow:hidden}
 
-</style></head>
+</style>
+<style id="source-protection-style">
+/* Basic deterrence only: browser-delivered code cannot be made truly secret. */
+img{ -webkit-user-drag:none; }
+</style>
+</head>
 <body class="popup-locked">
 <div class="distribution-overlay" id="distributionOverlay" role="dialog" aria-modal="true" aria-labelledby="distributionTitle">
   <div class="distribution-card">
@@ -66,7 +70,7 @@ body.popup-locked{overflow:hidden}
 
 <div class="app">
 <aside class="sidebar">
- <img class="site-logo" src="./mc_logo_blk.png" alt="로고">
+ <img class="site-logo" src="https://github.com/oleesudalo/cc/blob/main/mc_logo.png?raw=true" alt="로고">
  <div class="brand">SW.AI 교육강사 <b>3급</b><br>실기 문제은행</div>
  <div class="desc">2026년 3급 실기 출제기준을 바탕으로 선별한 <b>실기 151문제</b>를 연습할 수 있습니다.</div>
  <div class="section">유형</div><div class="forms" id="forms"><button class="active" data-v="A">A형</button><button data-v="B">B형</button></div>
@@ -167,4 +171,27 @@ wrong.onclick=()=>{S.wrongOnly=!S.wrongOnly;wrong.classList.toggle('on',S.wrongO
 random.onclick=()=>{if(S.list.length){S.i=Math.floor(Math.random()*S.list.length);render();window.scrollTo(0,0)}};
 document.addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(e.key==='ArrowLeft'&&S.list.length&&S.i>0){S.i--;render()}if(e.key==='ArrowRight'&&S.list.length&&S.i<S.list.length-1){S.i++;render()}});
 updateStats();render();
-</script></body></html>
+</script>
+<script id="source-protection-script">
+(function(){
+  // Disable the most common casual routes to page source/dev tools.
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); }, true);
+  document.addEventListener('dragstart', function(e){
+    if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+  }, true);
+  document.addEventListener('keydown', function(e){
+    var k = String(e.key || '').toLowerCase();
+    var blocked =
+      e.key === 'F12' ||
+      (e.ctrlKey && k === 'u') ||
+      (e.ctrlKey && e.shiftKey && (k === 'i' || k === 'j' || k === 'c')) ||
+      (e.metaKey && e.altKey && (k === 'i' || k === 'j' || k === 'c'));
+    if (blocked){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      return false;
+    }
+  }, true);
+})();
+</script>
+</body></html>
